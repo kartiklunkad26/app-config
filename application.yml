@@ -1,0 +1,28 @@
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    io:
+      pivotal: INFO
+    com:
+      netflix:
+        eureka: OFF #OFF
+        discovery: OFF #OFF
+
+spring: # <---NEW SECTION
+  cloud:
+    services:
+      registrationMethod: route #direct
+
+ribbon: # <---NEW SECTION
+  IsSecure: false
+
+#spring:
+#  rabbitmq:
+#    addresses: ${vcap.services.cloud-bus.credentials.http_api_uris:http://localhost:5672}
